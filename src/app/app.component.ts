@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // Remplacez '/endpoint' par le chemin de votre API .NET
-    this.http.get(`${environment.apiUrl}/endpoint/api/User`).subscribe({
+    this.http.get(`${environment.apiUrl}/api/Users`).subscribe({
       next: (data) => {
         this.apiData = data;
         console.log('Données récupérées :', this.apiData);
