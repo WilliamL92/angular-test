@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    // Ajout du timeout à 10000 ms (5 secondes)
+    // Ajout du timeout à 10000 ms (10 secondes)
     this.http.get(`${environment.apiUrl}/api/users`)
       .pipe(timeout(10000))
       .subscribe({
@@ -28,8 +28,6 @@ export class AppComponent implements OnInit {
         },
         error: (error) => {
           console.error('Erreur lors de la récupération des données', error);
-          // Ici, vous pouvez éventuellement déclencher une logique qui notifie l'échec
-          // afin que votre GitHub Action le prenne en compte.
         }
       });
   }
