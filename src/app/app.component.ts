@@ -18,19 +18,14 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // Remplacez '/endpoint' par le chemin de votre API .NET
-    try{
-      this.http.get(`${environment.apiUrl}/api/users`).subscribe({
-        next: (data) => {
-          this.apiData = data;
-          console.log('Données récupérées :', this.apiData);
-        },
-        error: (error) => {
-          console.error('Erreur lors de la récupération des données :', error);
-        }
-      });
-    }
-    catch(err){
-      console.log("error while loading URL");
-    }
+    this.http.get(`${environment.apiUrl}/api/users`).subscribe({
+      next: (data) => {
+        this.apiData = data;
+        console.log('Données récupérées :', this.apiData);
+      },
+      error: (error) => {
+        console.error('Erreur lors de la récupération des données');
+      }
+    });
   }
 }
