@@ -101,6 +101,11 @@
             "scripts": []
           }
         }
+      },
+      "prerender": {
+        "options": {
+          "timeout": 120000
+        }
       }
     }
   }
