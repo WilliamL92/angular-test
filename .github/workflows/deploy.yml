@@ -58,8 +58,6 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SYNOLOGY_HOST }} 2>/dev/null >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
-          echo "Contenu de known_hosts :"
-          cat ~/.ssh/known_hosts
       - name: Déploiement sur Synology via SCP
         uses: appleboy/scp-action@v0.1.5
         with:
