@@ -18,9 +18,9 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    // Ajout du timeout à 5000 ms (5 secondes)
+    // Ajout du timeout à 10000 ms (5 secondes)
     this.http.get(`${environment.apiUrl}/api/users`)
-      .pipe(timeout(5000))
+      .pipe(timeout(10000))
       .subscribe({
         next: (data) => {
           this.apiData = data;
